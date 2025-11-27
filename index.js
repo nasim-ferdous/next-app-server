@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+require("dotenv").config();
 const cors = require("cors");
 const { MongoClient, ObjectId } = require("mongodb");
 
@@ -24,46 +25,58 @@ async function start() {
   if (cnt === 0) {
     await productsCol.insertMany([
       {
-        title: "Sample A",
-        short: "Short A",
-        description: "Full A",
-        price: 10,
-        image: "",
+        title: "Wireless Bluetooth Headphones",
+        short: "Comfortable wireless headphones with deep bass",
+        description:
+          "These wireless Bluetooth headphones offer immersive sound quality, deep bass, and 20-hour battery life. Designed for comfort with soft ear cushions and adjustable headband.",
+        price: 49.99,
+        image: "https://i.ibb.co/GpYfPrV/headphone.jpg",
+        createdAt: { $date: "2025-01-01T10:00:00Z" },
       },
       {
-        title: "Sample B",
-        short: "Short B",
-        description: "Full B",
-        price: 20,
-        image: "",
+        title: "Smart Fitness Watch",
+        short: "Track your health and daily activities",
+        description:
+          "A lightweight fitness watch with heart rate monitoring, sleep tracking, step counter, and smart notifications. Water-resistant design suitable for daily use.",
+        price: 79.0,
+        image: "https://i.ibb.co/fMKKm95/watch.jpg",
+        createdAt: { $date: "2025-01-02T11:30:00Z" },
       },
       {
-        title: "Sample C",
-        short: "Short C",
-        description: "Full C",
-        price: 30,
-        image: "",
+        title: "Portable Mini Speaker",
+        short: "Small size, powerful sound",
+        description:
+          "This portable mini speaker delivers surprisingly loud and clear audio. Includes Bluetooth 5.0, 8-hour battery life, and a waterproof body.",
+        price: 25.5,
+        image: "https://i.ibb.co/ykLb2Rq/speaker.jpg",
+        createdAt: { $date: "2025-01-03T15:45:00Z" },
       },
       {
-        title: "Sample D",
-        short: "Short D",
-        description: "Full D",
-        price: 40,
-        image: "",
+        title: "Eco-friendly Water Bottle",
+        short: "Reusable BPA-free bottle for daily use",
+        description:
+          "Designed with durability and sustainability in mind, this BPA-free water bottle keeps drinks cool for hours. Perfect for gym, office, and travel.",
+        price: 12.99,
+        image: "https://i.ibb.co/N1m7D1Q/bottle.jpg",
+        createdAt: { $date: "2025-01-04T09:15:00Z" },
       },
       {
-        title: "Sample E",
-        short: "Short E",
-        description: "Full E",
-        price: 50,
-        image: "",
+        title: "Modern Desk Lamp",
+        short: "LED desk lamp with adjustable brightness",
+        description:
+          "A sleek and modern LED desk lamp featuring adjustable brightness levels, touch control, and an energy-efficient design. Ideal for study or office.",
+        price: 29.0,
+        image: "https://i.ibb.co/SKdCTR0/lamp.jpg",
+        createdAt: { $date: "2025-01-05T18:20:00Z" },
       },
       {
-        title: "Sample F",
-        short: "Short F",
-        description: "Full F",
-        price: 60,
-        image: "",
+        title: "USB-C Fast Charger",
+        short: "20W fast charging adapter",
+        description:
+          "Compact and powerful 20W USB-C fast charger compatible with most smartphones and tablets. Built-in safety features to protect against overheating.",
+        price: 15.0,
+        image: "https://i.ibb.co/m9z1VW1/charger.jpg",
+        createdAt: { $date: "2025-01-06T14:55:00Z" },
       },
     ]);
   }
